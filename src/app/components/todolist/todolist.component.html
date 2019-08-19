@@ -10,13 +10,13 @@
     <ul>
         <li *ngFor="let item of todolist;let key=index;" [hidden]="item.status==1">
             
-        <input type="checkbox" [(ngModel)]="item.status"> {{item.title}} <button (click)=deletelist(key)>delete</button>
+        <input type="checkbox" [(ngModel)]="item.status" (change)="checkBoxChange()"> {{item.title}} <button (click)=deletelist(key)>delete</button>
     </ul>
     <h3>Already Finish</h3>
     <ul>
         <li *ngFor="let item of todolist;let key=index;" [hidden]="item.status==0">
                 
-        <input type="checkbox" [(ngModel)]="item.status" > {{item.title}} <button (click)=deletelist(key)>delete</button>
+        <input type="checkbox" [(ngModel)]="item.status" (change)="checkBoxChange()"> {{item.title}} <button (click)=deletelist(key)>delete</button>
     </ul>
 </div>
 
